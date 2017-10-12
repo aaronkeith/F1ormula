@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+driver-listing {
+  border: 2px dashed pink;
+}
