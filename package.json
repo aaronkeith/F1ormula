@@ -1,0 +1,23 @@
+{
+  "name": "f1ormula",
+  "version": "1.0.0",
+  "description": "a dashboard that allows you to visually view race, series, driver, constructor data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronkeith/F1ormula.git"
+  },
+  "author": "aaron keith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronkeith/F1ormula/issues"
+  },
+  "homepage": "https://github.com/aaronkeith/F1ormula#readme",
+  "dependencies": {
+    "expresss": "0.0.0",
+    "mongodb": "^2.2.32"
+  }
+}
