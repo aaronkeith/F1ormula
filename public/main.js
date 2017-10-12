@@ -1,6 +1,17 @@
 /* eslint-disable no-unused-vars */
 const $driverListing = document.querySelector('.driver-listing')
 
+fetch('http://ergast.com/api/f1/2010/drivers').then(response =>
+  response.json().then(driverResolve => {
+    const renderDriver = driverResolve.map(driverResolve => {
+      return renderDriver(driverResolve)
+    })
+    renderDriver.forEach(driver => {
+      $driverListing.appendChild(driver)
+    })
+  })
+)
+
 function renderDriver({
   number,
   driverId,
