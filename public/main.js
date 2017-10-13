@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const $driverListing = document.querySelector('.driver-listing')
+const $driverListing = document.querySelector('.driver-listing-qualify')
 
 fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
   response
@@ -46,15 +46,11 @@ function renderDriver({ Constructor, Driver, Q1 }) {
   $nationality.textContent = Driver.nationality
   const $constructorName = document.createElement('p')
   $constructorName.textContent = Constructor.name
-
-  // const $driverUrl = document.createElement('p')
-  // img.src = public / images / cars / F1_ferarri - raikkonen.png
   $driver.append(
     $driverCarImage,
     $permanentNumber,
     $driverId,
     $code,
-    // $driverUrl,
     $givenName,
     $familyName,
     $nationality,
