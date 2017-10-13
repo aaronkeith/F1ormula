@@ -22,6 +22,16 @@ fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
 
 function renderDriver({ Constructor, Driver, Q1 }) {
   const $driver = document.createElement('div')
+  const $driverCarImage = document.createElement('img')
+  $driverCarImage.src =
+    'images/cars/F1' +
+    '_' +
+    Constructor.constructorId +
+    '-' +
+    Driver.familyName +
+    '-' +
+    Driver.permanentNumber +
+    '.png'
   const $permanentNumber = document.createElement('p')
   $permanentNumber.textContent = Driver.permanentNumber
   const $driverId = document.createElement('p')
@@ -36,13 +46,11 @@ function renderDriver({ Constructor, Driver, Q1 }) {
   $nationality.textContent = Driver.nationality
   const $constructorName = document.createElement('p')
   $constructorName.textContent = Constructor.name
-  const $driverCarImage = document.createElement('img')
-  $driverCarImage.src =
-    "public/images/cars/'F1' + '_' + Constructor.constructorId + '-' + Driver.familyName + '-' + Driver.permanentNumber + '.png'"
 
   // const $driverUrl = document.createElement('p')
   // img.src = public / images / cars / F1_ferarri - raikkonen.png
   $driver.append(
+    $driverCarImage,
     $permanentNumber,
     $driverId,
     $code,
@@ -51,7 +59,6 @@ function renderDriver({ Constructor, Driver, Q1 }) {
     $familyName,
     $nationality,
     $constructorName
-    $driverCarImage
   )
   return $driver
 }
