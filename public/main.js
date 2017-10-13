@@ -34,9 +34,12 @@ function renderDriver({ Constructor, Driver, Q1 }) {
   $familyName.textContent = Driver.familyName
   const $nationality = document.createElement('p')
   $nationality.textContent = Driver.nationality
-  const $constructorId = document.createElement('p')
-  $constructorId.textContent = Constructor.constructorId
-  // const $driverCarImage = document.createElement('img')
+  const $constructorName = document.createElement('p')
+  $constructorName.textContent = Constructor.name
+  const $driverCarImage = document.createElement('img')
+  $driverCarImage.src =
+    "public/images/cars/'F1' + '_' + Constructor.constructorId + '-' + Driver.familyName + '-' + Driver.permanentNumber + '.png'"
+
   // const $driverUrl = document.createElement('p')
   // img.src = public / images / cars / F1_ferarri - raikkonen.png
   $driver.append(
@@ -47,7 +50,8 @@ function renderDriver({ Constructor, Driver, Q1 }) {
     $givenName,
     $familyName,
     $nationality,
-    $constructorId
+    $constructorName
+    $driverCarImage
   )
   return $driver
 }
