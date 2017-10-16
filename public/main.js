@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const $driverListing = document.querySelector('.driver-listing-qualify')
+const $driverQualify = document.querySelector('.driver-listing-qualify')
 
 fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
   response
@@ -12,7 +12,7 @@ fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
         return renderDriver(driver)
       })
       renderDrivers.forEach(driver => {
-        $driverListing.appendChild(driver)
+        $driverQualify.appendChild(driver)
       })
     })
     .catch(err => {
