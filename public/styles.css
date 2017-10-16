@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.hero-body {
+  padding: 0;
+}
+
 .driver-listing-qualify {
   border: 2px dashed pink;
 }
@@ -17,5 +21,9 @@
 
 .race-selection {
   margin-bottom: 3vh;
+  text-align: center;
+}
+
+.race-selectiontab {
   text-align: center;
 }
