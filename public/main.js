@@ -6,7 +6,6 @@ fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
   response
     .json()
     .then(driverResolve => {
-      // console.log(driverResolve)
       const driverData =
         driverResolve.MRData.RaceTable.Races[0].QualifyingResults
       const renderDrivers = driverData.map(driver => {
@@ -127,10 +126,6 @@ function renderDriverFinish({
   $startPosition.setAttribute('id', 'start-position')
   $startPosition.textContent = 'Start Position:' + ' ' + grid
 
-  // const $constructorName = document.createElement('p')
-  // $constructorName.setAttribute('id', 'constructor-name')
-  // $constructorName.textContent = 'Constructor:' + ' ' + Constructor.name
-
   const $points = document.createElement('p')
   $points.setAttribute('class', 'points')
   $points.textContent = 'Points:' + ' ' + points
@@ -138,16 +133,6 @@ function renderDriverFinish({
   const $raceStatus = document.createElement('p')
   $raceStatus.setAttribute('class', 'race-status')
   $raceStatus.textContent = 'Race Status' + ' ' + status
-
-  // const $raceStatus = document.createElement('p')
-  // $raceStatus.setAttribute('class', 'race-status')
-  // if (Time !== undefined) {
-  //   $raceStatus.textContent = Time.status
-  // } else if (FastestLap !== undefined) {
-  //   $raceStatus.textContent = FastestLap.status
-  // } else {
-  //   $raceStatus.textContent = 'No Data'
-  // }
 
   const $fastestLap = document.createElement('p')
   $fastestLap.setAttribute('class', 'fastest-lap')
@@ -168,7 +153,6 @@ function renderDriverFinish({
     $driverCarImage,
     $driverName,
     $startPosition,
-    // $constructorName,
     $raceStatus,
     $points,
     $fastestLap,
