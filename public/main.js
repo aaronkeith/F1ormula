@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 const $driverQualify = document.querySelector('.driver-listing-qualify')
 const $driverFinish = document.querySelector('.driver-listing-finish')
 
