@@ -3,7 +3,7 @@
 const $driverQualify = document.querySelector('.driver-listing-qualify')
 const $driverFinish = document.querySelector('.driver-listing-finish')
 
-fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
+fetch('http://ergast.com/api/f1/2017/1/qualifying.json').then(response =>
   response
     .json()
     .then(driverResolve => {
@@ -160,4 +160,48 @@ function renderDriverFinish({
     $fastestLapKph
   )
   return $driver
+}
+
+//AUSTRALIA
+const $australiaTrack = document.createElement('img')
+$australiaTrack.src = 'images/circuits/Australia_track.png'
+$australiaTrack.setAttribute('id', 'australia-track')
+
+function australiaQualify() {
+  fetch('http://ergast.com/api/f1/2017/1/qualifying.json').then(response =>
+    response
+      .json()
+      .then(driverResolve => {
+        const driverData =
+          driverResolve.MRData.RaceTable.Races[0].QualifyingResults
+        const renderDrivers = driverData.map(driver => {
+          return renderDriverQualify(driver)
+        })
+        renderDrivers.forEach(driver => {
+          $driverQualify.appendChild(driver)
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  )
+}
+
+function australiaFinish() {
+  fetch('http://ergast.com/api/f1/2017/1/results.json').then(response =>
+    response
+      .json()
+      .then(driverResolve => {
+        const driverData = driverResolve.MRData.RaceTable.Races[0].Results
+        const renderDrivers = driverData.map(driver => {
+          return renderDriverFinish(driver)
+        })
+        renderDrivers.forEach(driver => {
+          $driverFinish.appendChild(driver)
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  )
 }
