@@ -132,7 +132,19 @@ function renderDriverFinish({
   return $driver
 }
 
-//AUSTRALIA
+function renderCircutImage({ Circuit, date, raceName, round, season }) {
+  const $circuit = document.createElement('div')
+  $driver.setAttribute('class', 'circuit-image')
+  const $circuitImage = document.createElement('img')
+  $circuitImage.src =
+    'images/cars/F1' +
+    '_' +
+    Constructor.constructorId +
+    '-' +
+    Driver.familyName +
+    '-' +
+    Driver.permanentNumber +
+    '.png'
 
 function changeRound(roundNumber) {
   qualify(roundNumber)
