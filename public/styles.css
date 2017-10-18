@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.hero-body {
+  padding: 0;
+  text-align: center;
+}
+
+.qualify-title {
+  margin: 0 1.5vw;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-variant-caps: petite-caps;
+  color: #666;
+  margin: 0 1.5vw;
+  padding: 0;
+}
+
+.finish-title {
+  margin: 0 1.5vw;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-variant-caps: petite-caps;
+  color: #666;
+  margin: 0 1.5vw;
+  padding: 0;
+}
+
+.driver-listing-qualify {
+  margin: 0 1.5vw;
+  padding: 0;
+}
+
+.driver-listing-finish {
+  margin: 0 1.5vw;
+  padding: 0;
+}
+
+.container.brand {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#f1ormula-brand {
+  height: 9vh;
+  margin-top: 2vh;
+}
+
+.race-selection {
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.race-selectiontab {
+  text-align: center;
+}
+
+.driver-display {
+  margin-top: 2vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+}
+
+#qualify-position {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  font-style: italic;
+  font-variant-caps: petite-caps;
+  color: #ba0000;
+}
+
+#finish-position {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  font-style: italic;
+  font-variant-caps: petite-caps;
+  color: #ba0000;
+}
+
+#position {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-variant-caps: petite-caps;
+  margin-left: 0.5vw;
+}
+
+#driver-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
