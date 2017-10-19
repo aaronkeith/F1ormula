@@ -2,42 +2,17 @@
 
 const $driverQualify = document.querySelector('.driver-listing-qualify')
 const $driverFinish = document.querySelector('.driver-listing-finish')
+const $circuitLayout = document.querySelector('.circuit-image')
+const $roundSelection = document.querySelector('#race-dropdown')
+$roundSelection.addEventListener('change', () => {
+  changeRound($roundSelection.value)
+})
+$roundSelection.addEventListener('change', () => {
+  displayCircuit($roundSelection.value)
+})
 
-fetch('http://ergast.com/api/f1/2017/3/qualifying.json').then(response =>
-  response
-    .json()
-    .then(driverResolve => {
-      const driverData =
-        driverResolve.MRData.RaceTable.Races[0].QualifyingResults
-      const renderDrivers = driverData.map(driver => {
-        return renderDriverQualify(driver)
-      })
-      renderDrivers.forEach(driver => {
-        $driverQualify.appendChild(driver)
-      })
-    })
-    .catch(err => {
-      console.log(err)
-    })
-)
-
-fetch('http://ergast.com/api/f1/2017/3/results.json').then(response =>
-  response
-    .json()
-    .then(driverResolve => {
-      console.log(driverResolve)
-      const driverData = driverResolve.MRData.RaceTable.Races[0].Results
-      const renderDrivers = driverData.map(driver => {
-        return renderDriverFinish(driver)
-      })
-      renderDrivers.forEach(driver => {
-        $driverFinish.appendChild(driver)
-      })
-    })
-    .catch(err => {
-      console.log(err)
-    })
-)
+changeRound(1)
+displayCircuit('1')
 
 function renderDriverQualify({ Constructor, Driver, Q1, Q2, Q3, position }) {
   const $driver = document.createElement('div')
@@ -159,5 +134,85 @@ function renderDriverFinish({
     $fastestLap,
     $fastestLapKph
   )
+
   return $driver
+}
+
+function displayCircuit(circuitSelect) {
+  const image = document.createElement('img')
+  switch (circuitSelect) {
+    case '1':
+      image.src = 'images/circuits/1-Australia.png'
+      break
+    case '2':
+      image.src = 'images/circuits/2-China.png'
+      break
+    case '3':
+      image.src = 'images/circuits/3-Bahrain.png'
+      break
+    case '4':
+      image.src = 'images/circuits/4-Russia.png'
+      break
+    case '5':
+      image.src = 'images/circuits/5-Spain.png'
+      break
+    case '6':
+      image.src = 'images/circuits/6-Monaco.png'
+      break
+    default:
+      alert('Please select a circuit')
+  }
+  const $circuitImage = document.querySelector('.circuit-image')
+  $circuitImage.innerHTML = ''
+  $circuitImage.appendChild(image)
+}
+
+function changeRound(roundNumber) {
+  qualify(roundNumber)
+  finish(roundNumber)
+}
+
+function qualify(roundNumber) {
+  fetch(
+    'http://ergast.com/api/f1/2017/' + roundNumber + '/qualifying.json'
+  ).then(response =>
+    response
+      .json()
+      .then(driverResolve => {
+        const driverData =
+          driverResolve.MRData.RaceTable.Races[0].QualifyingResults
+        const renderDrivers = driverData.map(driver => {
+          return renderDriverQualify(driver)
+        })
+        $driverQualify.innerHTML = ''
+        renderDrivers.forEach(driver => {
+          $driverQualify.appendChild(driver)
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  )
+}
+
+function finish(roundNumber) {
+  fetch(
+    'http://ergast.com/api/f1/2017/' + roundNumber + '/results.json'
+  ).then(response =>
+    response
+      .json()
+      .then(driverResolve => {
+        const driverData = driverResolve.MRData.RaceTable.Races[0].Results
+        const renderDrivers = driverData.map(driver => {
+          return renderDriverFinish(driver)
+        })
+        $driverFinish.innerHTML = ''
+        renderDrivers.forEach(driver => {
+          $driverFinish.appendChild(driver)
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  )
 }
