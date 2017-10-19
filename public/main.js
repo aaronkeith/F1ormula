@@ -134,6 +134,7 @@ function renderDriverFinish({
     $fastestLap,
     $fastestLapKph
   )
+
   return $driver
 }
 
