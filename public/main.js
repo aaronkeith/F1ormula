@@ -149,6 +149,15 @@ function displayCircuit(circuitSelect) {
     case '3':
       image.src = 'images/circuits/3-Bahrain.png'
       break
+    case '4':
+      image.src = 'images/circuits/4-Russia.png'
+      break
+    case '5':
+      image.src = 'images/circuits/5-Spain.png'
+      break
+    case '6':
+      image.src = 'images/circuits/6-Monaco.png'
+      break
     default:
       alert('Please select a circuit')
   }
