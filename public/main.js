@@ -2,12 +2,17 @@
 
 const $driverQualify = document.querySelector('.driver-listing-qualify')
 const $driverFinish = document.querySelector('.driver-listing-finish')
+const $circuitLayout = document.querySelector('.circuit-image')
 const $roundSelection = document.querySelector('#race-dropdown')
 $roundSelection.addEventListener('change', () => {
   changeRound($roundSelection.value)
 })
+$roundSelection.addEventListener('change', () => {
+  displayCircuit($roundSelection.value)
+})
 
 changeRound(1)
+displayCircuit('1')
 
 function renderDriverQualify({ Constructor, Driver, Q1, Q2, Q3, position }) {
   const $driver = document.createElement('div')
@@ -132,19 +137,25 @@ function renderDriverFinish({
   return $driver
 }
 
-function renderCircutImage({ Circuit, date, raceName, round, season }) {
-  const $circuit = document.createElement('div')
-  $driver.setAttribute('class', 'circuit-image')
-  const $circuitImage = document.createElement('img')
-  $circuitImage.src =
-    'images/cars/F1' +
-    '_' +
-    Constructor.constructorId +
-    '-' +
-    Driver.familyName +
-    '-' +
-    Driver.permanentNumber +
-    '.png'
+function displayCircuit(circuitSelect) {
+  const image = document.createElement('img')
+  switch (circuitSelect) {
+    case '1':
+      image.src = 'images/circuits/1-Australia.png'
+      break
+    case '2':
+      image.src = 'images/circuits/2-China.png'
+      break
+    case '3':
+      image.src = 'images/circuits/3-Bahrain.png'
+      break
+    default:
+      alert('Please select a circuit')
+  }
+  const $circuitImage = document.querySelector('.circuit-image')
+  $circuitImage.innerHTML = ''
+  $circuitImage.appendChild(image)
+}
 
 function changeRound(roundNumber) {
   qualify(roundNumber)
@@ -181,6 +192,7 @@ function finish(roundNumber) {
     response
       .json()
       .then(driverResolve => {
+        //console.log(driverResolve)
         const driverData = driverResolve.MRData.RaceTable.Races[0].Results
         const renderDrivers = driverData.map(driver => {
           return renderDriverFinish(driver)
