@@ -202,7 +202,6 @@ function finish(roundNumber) {
     response
       .json()
       .then(driverResolve => {
-        //console.log(driverResolve)
         const driverData = driverResolve.MRData.RaceTable.Races[0].Results
         const renderDrivers = driverData.map(driver => {
           return renderDriverFinish(driver)
