@@ -13,33 +13,31 @@
 }
 
 .qualify-title {
-  margin: 0 1.5vw;
+  /*margin: 0 1.5vw;*/
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
   font-variant-caps: petite-caps;
   color: #666;
-  margin: 0 1.5vw;
   padding: 0;
   background-color: #eee;
 }
 
 .finish-title {
-  margin: 0 1.5vw;
+  margin-left: 1.5vw;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
   font-variant-caps: petite-caps;
   color: #666;
-  margin: 0 1.5vw;
   padding: 0;
   background-color: #eee;
 }
 
 .driver-listing-qualify {
-  margin: 0 1.5vw;
+  /*margin: 0 1.5vw;*/
   padding: 0;
 }
 
@@ -54,7 +52,7 @@
 }
 
 #f1ormula-brand {
-  height: 9vh;
+  height: 6vh;
   margin-top: 2vh;
 }
 
@@ -64,6 +62,7 @@
 }
 
 .race-selectiontab {
+  margin-top: 2vh;
   text-align: center;
 }
 
@@ -109,4 +108,104 @@
 .circuit-image {
   margin: 0 auto;
   text-align: center;
+  padding-left: 1.5vw;
+}
+
+#start-position,
+#points,
+#fastest-lap-kph,
+#nationality,
+#Q1,
+#Q3 {
+  background-color: #f7f7f7;
+}
+
+/*carousel*/
+#my-carousel {
+  margin-top: 60px;
+}
+
+.carousel-position {
+  background: top center no-repeat;
+}
+
+#carousel-tag {
+  margin: 0 auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#carousel-tag > a {
+  margin: 5px 3px;
+  color: #333;
+  font-size: 14px;
+}
+
+#carousel-tag > a:hover {
+  text-decoration: none;
+  color: #83fe00;
+}
+
+#slide1:hover,
+#slide2:hover,
+#slide3:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 481px) {
+  #my-carousel .item {
+    height: 310px;
+  }
+
+  #slide1 {
+    background: url('images/carousel_small_01_run_opt.png');
+  }
+
+  #slide2 {
+    background: url('images/carousel_small_02_skate_opt.png');
+  }
+
+  #slide3 {
+    background: url('images/carousel_small_03_basketball_opt.png');
+  }
+
+  #my-carousel {
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  #my-carousel .item {
+    height: 400px;
+  }
+
+  #slide1 {
+    background: url('images/carousel_medium_01_run_opt.png');
+  }
+
+  #slide2 {
+    background: url('images/carousel_medium_02_skate_opt.png');
+  }
+
+  #slide3 {
+    background: url('images/carousel_medium_03_basketball_opt.png');
+  }
+}
+
+@media (min-width: 1200px) {
+  #my-carousel .item {
+    height: 500px;
+  }
+
+  #slide1 {
+    background: url('images/carousel_large_01_run_opt.png');
+  }
+
+  #slide2 {
+    background: url('images/carousel_large_02_skate_opt.png');
+  }
+
+  #slide3 {
+    background: url('images/carousel_large_03_basketball_opt.png');
+  }
 }

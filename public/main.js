@@ -45,12 +45,27 @@ function renderDriverQualify({ Constructor, Driver, Q1, Q2, Q3, position }) {
   const $constructorName = document.createElement('p')
   $constructorName.setAttribute('id', 'constructor-name')
   $constructorName.textContent = 'Constructor:' + ' ' + Constructor.name
+
   const $Q1Time = document.createElement('p')
+  $Q1Time.setAttribute('id', 'Q1')
   $Q1Time.textContent = 'Q1 Time:' + ' ' + Q1
+
   const $Q2Time = document.createElement('p')
-  $Q2Time.textContent = 'Q2 Time:' + ' ' + Q2
+  $Q2Time.setAttribute('id', 'Q2')
+  if (Q2 !== undefined) {
+    $Q2Time.textContent = 'Q2 Time:' + ' ' + Q2
+  } else {
+    $Q2Time.textContent = 'Q2 Time:' + ' ' + 'Did not advance'
+  }
+
   const $Q3Time = document.createElement('p')
-  $Q3Time.textContent = 'Q3 Time:' + ' ' + Q3
+  $Q3Time.setAttribute('id', 'Q3')
+  if (Q3 !== undefined) {
+    $Q3Time.textContent = 'Q3 Time:' + ' ' + Q3
+  } else {
+    $Q3Time.textContent = 'Q3 Time:' + ' ' + 'Did not advance'
+  }
+
   $driver.append(
     $qualifyPosition,
     $positionText,
@@ -103,7 +118,7 @@ function renderDriverFinish({
   $startPosition.textContent = 'Start Position:' + ' ' + grid
 
   const $points = document.createElement('p')
-  $points.setAttribute('class', 'points')
+  $points.setAttribute('id', 'points')
   $points.textContent = 'Points:' + ' ' + points
 
   const $raceStatus = document.createElement('p')
@@ -117,7 +132,7 @@ function renderDriverFinish({
   }
 
   const $fastestLapKph = document.createElement('p')
-  $fastestLapKph.setAttribute('class', 'fastest-lap-kph')
+  $fastestLapKph.setAttribute('id', 'fastest-lap-kph')
   if (FastestLap !== undefined) {
     $fastestLapKph.textContent =
       'Lap Speed:' + ' ' + FastestLap.AverageSpeed.speed + ' ' + 'kph'
