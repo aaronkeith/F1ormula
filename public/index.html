@@ -4,9 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>F1ormula</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -18,6 +17,62 @@
       </div>
     </div>
   </section>
+
+
+    <div class="container" id="main">
+
+      <div class="carousel slide" id="my-carousel" data-ride="carousel" data-interval="3000">
+
+        <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#my-carousel"></li>
+          <li data-slide-to="1" data-target="#my-carousel"></li>
+          <li data-slide-to="2" data-target="#my-carousel"></li>
+          <li data-slide-to="3" data-target="#my-carousel"></li>
+          <li data-slide-to="4" data-target="#my-carousel"></li>
+        </ol>
+
+
+        <div class="carousel-inner">
+          <div class="item active carousel-position" id="slide1">
+            <div class="carousel-caption">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="item carousel-position" id="slide2">
+            <div class="carousel-caption">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="item carousel-position" id="slide3">
+            <div class="carousel-caption">
+              <h4></h4>
+            </div>
+          </div>
+
+
+        <div class="item carousel-position" id="slide4">
+          <div class="carousel-caption">
+            <h4></h4>
+          </div>
+        </div>
+
+
+      <div class="item carousel-position" id="slide5">
+        <div class="carousel-caption">
+          <h4></h4>
+        </div>
+      </div>
+    </div>
+
+        <a class="left carousel-control" data-slide="prev" href="#my-carousel"><span class="icon-prev"></span></a>
+        <a class="right carousel-control" data-slide="next" href="#my-carousel"><span class="icon-next"></span></a>
+
+      </div>
+      <!-- end my-carousel -->
+
+
   <section>
     <div class="field">
       <label class="label race-selectiontab">Select Round</label>
@@ -55,29 +110,30 @@
     </div>
   </section>
 
-<div id="title-bar">
-  <div class="columns titles">
-    <div class="column is-2"></div>
-    <div class= "qualify-title column is-4">
-      <div class= "qualify-title">
-        Starting Grid</div>
-    </div>
-    <div class= " finish-title column is-4">
-      <div class="finish-title">
-        Race Result</div>
-    </div>
-  <div class="column is-2"></div>
-    </div>
-</div>
+  <div id="title-bar">
+    <div class="columns titles">
+      <div class="column is-3"></div>
+      <div class= "qualify-title column is-3">
+        <div class= "qualify-title">
+          Starting Grid</div>
+        </div>
+        <div class= " finish-title column is-3">
+          <div class="finish-title">
+            Race Result</div>
+          </div>
+          <div class="column is-3"></div>
+        </div>
+      </div>
 
-<div class="columns">
-  <div class="column is-2"></div>
-  <div class="driver-listing-qualify column is-4"></div>
-  <div class="driver-listing-finish column is-4"></div>
-  <div class="column is-2"></div>
-</div>
+      <div class="columns">
+        <div class="column is-3"></div>
+        <div class="driver-listing-qualify column is-3"></div>
+        <div class="driver-listing-finish column is-3"></div>
+        <div class="column is-3"></div>
+      </div>
 
-  <script src="main.js" charset="utf-8"></script>
-
-</body>
-</html>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script/>
+      <script src="main.js" charset="utf-8"></script>
+    </body>
+    </html>
