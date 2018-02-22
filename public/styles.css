@@ -158,15 +158,22 @@
   }
 
   #slide1 {
-    background: url('images/carousel_small_01_run_opt.png');
+    background: url('images/carousel/carousel_small_01_AUS.png');
   }
 
   #slide2 {
-    background: url('images/carousel_small_02_skate_opt.png');
+    background: url('images/carousel/carousel_small_01_CHINA.png');
   }
 
   #slide3 {
-    background: url('images/carousel_small_03_basketball_opt.png');
+    background: url('images/carousel/carousel_small_01_BAHRAIN.png');
+  }
+
+  #slide4 {
+    background: url('images/carousel/carousel_small_01_RUSSIA.png');
+  }
+  #slide5 {
+    background: url('images/carousel/carousel_small_01_SPAIN.png');
   }
 
   #my-carousel {
@@ -180,32 +187,47 @@
   }
 
   #slide1 {
-    background: url('images/carousel_medium_01_run_opt.png');
+    background: url('images/carousel/carousel_medium_01_AUS.png');
   }
 
   #slide2 {
-    background: url('images/carousel_medium_02_skate_opt.png');
+    background: url('images/carousel/carousel_medium_01_CHINA.png');
   }
 
   #slide3 {
-    background: url('images/carousel_medium_03_basketball_opt.png');
-  }
-}
-
-@media (min-width: 1200px) {
-  #my-carousel .item {
-    height: 500px;
+    background: url('images/carousel/carousel_medium_01_BAHRAIN.png');
   }
 
-  #slide1 {
-    background: url('images/carousel_large_01_run_opt.png');
+  #slide4 {
+    background: url('images/carousel/carousel_medium_01_RUSSIA.png');
+  }
+  #slide5 {
+    background: url('images/carousel/carousel_medium_01_SPAIN.png');
+
   }
 
-  #slide2 {
-    background: url('images/carousel_large_02_skate_opt.png');
-  }
+  @media (min-width: 1200px) {
+    #my-carousel .item {
+      height: 500px;
+    }
 
-  #slide3 {
-    background: url('images/carousel_large_03_basketball_opt.png');
+    #slide1 {
+      background: url('images/carousel/carousel_large_01_AUS.png');
+    }
+
+    #slide2 {
+      background: url('images/carousel/carousel_large_01_CHINA.png');
+    }
+
+    #slide3 {
+      background: url('images/carousel/carousel_large_01_BAHRAIN.png');
+    }
+
+    #slide4 {
+      background: url('images/carousel/carousel_large_01_RUSSIA.png');
+    }
+
   }
-}
+  #slide5 {
+    background: url('images/carousel/carousel_large_01_SPAIN.png');
+  }
